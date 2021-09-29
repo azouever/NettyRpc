@@ -6,6 +6,7 @@ import com.netty.rpc.client.RpcClient;
 import com.netty.rpc.client.proxy.RpcService;
 import com.app.test.service.Person;
 import com.app.test.service.PersonService;
+import com.netty.rpc.config.Constant;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -15,7 +16,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class RpcCallbackTest {
     public static void main(String[] args) {
-        final RpcClient rpcClient = new RpcClient("10.217.59.164:2181");
+        final RpcClient rpcClient = new RpcClient(Constant.ZK_ADDRESS);
         final CountDownLatch countDownLatch = new CountDownLatch(1);
 
         try {

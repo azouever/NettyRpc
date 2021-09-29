@@ -2,6 +2,7 @@ package com.app.test.client;
 
 import com.netty.rpc.client.RpcClient;
 import com.app.test.service.HelloService;
+import com.netty.rpc.config.Constant;
 
 /**
  * Created by luxiaoxun on 2016-03-11.
@@ -9,7 +10,7 @@ import com.app.test.service.HelloService;
 public class RpcTest {
 
     public static void main(String[] args) throws InterruptedException {
-        final RpcClient rpcClient = new RpcClient("10.217.59.164:2181");
+        final RpcClient rpcClient = new RpcClient(Constant.ZK_ADDRESS);
 
         int threadNum = 1;
         final int requestNum = 50;

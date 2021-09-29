@@ -1,6 +1,7 @@
 package com.app.test.server;
 
 import com.app.test.service.*;
+import com.netty.rpc.config.Constant;
 import com.netty.rpc.server.RpcServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +11,7 @@ public class RpcServerBootstrap2 {
 
     public static void main(String[] args) {
         String serverAddress = "127.0.0.1:18877";
-        String registryAddress = "10.217.59.164:2181";
+        String registryAddress = Constant.ZK_ADDRESS;
         RpcServer rpcServer = new RpcServer(serverAddress, registryAddress);
         HelloService helloService1 = new HelloServiceImpl();
         rpcServer.addService(HelloService.class.getName(), "1.0", helloService1);

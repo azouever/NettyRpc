@@ -4,6 +4,7 @@ import com.netty.rpc.client.handler.RpcFuture;
 import com.netty.rpc.client.RpcClient;
 import com.netty.rpc.client.proxy.RpcService;
 import com.app.test.service.HelloService;
+import com.netty.rpc.config.Constant;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class RpcAsyncTest {
     public static void main(String[] args) throws InterruptedException {
-        final RpcClient rpcClient = new RpcClient("10.217.59.164:2181");
+        final RpcClient rpcClient = new RpcClient(Constant.ZK_ADDRESS);
 
         int threadNum = 1;
         final int requestNum = 100;
